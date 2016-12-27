@@ -33,7 +33,7 @@ public class Enemy extends LivingThing{
             System.out.println(getName() + "の攻撃！,,,だが、" + opponent.getName() + "は攻撃を回避した！");
         }
 
-        if(Math.random() < 0.2) {
+        else if(Math.random() < 0.2) {
             System.out.printf("%sの攻撃！痛恨の一撃！！%sに%dのダメージを与えた！！\n", getName(), opponent.getName(), damage);
             damage *= 2;
         }
