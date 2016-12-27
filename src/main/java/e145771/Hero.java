@@ -35,12 +35,12 @@ public class Hero extends LivingThing {
         }
 
         else if(Math.random() < 0.3) {
-            System.out.printf("%sの攻撃！会心の一撃！！%sに%dのダメージを与えた！！", getName(), opponent.getName(), damage);
+            System.out.printf("%sの攻撃！会心の一撃！！%sに%dのダメージを与えた！！\n", getName(), opponent.getName(), damage);
             damage *= 2;
         }
 
         else
-            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！", getName(), opponent.getName(), damage);
+            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", getName(), opponent.getName(), damage);
 
         opponent.wounded(damage);
     }
