@@ -21,4 +21,22 @@ public class Enemy extends LivingThing{
     public Enemy (String name, int maximumHP, int attack) {
         super(name, maximumHP, attack);
     }
+
+    @Override
+    public void attack(LivingThing opponent) {
+        if (isDead())
+            return;
+
+        int damage = (int)(Math.random() * getAttack());
+
+        if(Math.random() < 0.2) {
+            System.out.printf("%sの攻撃！痛恨の一撃！！%sに%dのダメージを与えた！！\n", getName(), opponent.getName(), damage);
+            damage *= 2;
+        }
+
+        else
+            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", getName(), opponent.getName(), damage);
+
+        opponent.wounded(damage);
+    }
 }
